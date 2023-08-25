@@ -18,16 +18,14 @@
   <h3>My Lists</h3>
 
   <div class="row justify-content-center align-items-center">
-    <div class="col-md-4 d-flex">
-      <% @lists.each do |list| %>
-       <div class="card-category"
-        style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path list.photo.key, height: 300, crop: :fill %>')"
-      >
-        <h5 class="card-title text-center"><%= link_to list.name, list_path(list.id) %></h5>
-      </div>
-
+    <% @lists.each do |list| %>
+      <div class="col-md-4 d-flex">
+        <div class="card-category"
+          style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path(list.photo.key, height: 300, crop: :fill) %>')"
+        >
+          <h5 class="card-title text-center"><%= link_to list.name, list_path(list.id) %></h5>
         </div>
-      <% end %>
-    </div>
+      </div>
+    <% end %>
   </div>
 </div>
