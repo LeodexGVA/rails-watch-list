@@ -9,6 +9,7 @@
 require "json"
 
 puts "Cleaning database..."
+Bookmark.destroy_all
 Movie.destroy_all
 List.destroy_all
 
