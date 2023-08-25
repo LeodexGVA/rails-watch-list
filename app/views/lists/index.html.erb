@@ -4,28 +4,26 @@
   <div class="mask" style="background-color: rgba(0, 0, 0, 0.6);">
     <div class="d-flex justify-content-center align-items-center h-100">
       <div class="text-white">
-        <h1 class="mb-3">The Utlimate watchlist</h1>
-        <h2 class="mb-3">Save any kind of movies</h2>
-        <%= link_to "Create a movie list", new_list_path, class: "btn btn-outline-light btn-lg" %>
+        <h1 class="mb-3">The Ultimate Watchlist</h1>
+        <h2 class="mb-3">Save Any Kind of Movies</h2>
+        <%= link_to "Create a Movie List", new_list_path, class: "btn btn-outline-light btn-lg" %>
       </div>
     </div>
   </div>
 </div>
 <!-- Hero End -->
+
 <!-- Main container Start -->
 <div class="container py-5">
-  <h3>My lists</h3>
+  <h3>My Lists</h3>
 
   <div class="row justify-content-center align-items-center">
     <div class="col-md-4 d-flex">
       <% @lists.each do |list| %>
-        <div class="card-category"
-  style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path @article.photo.key, height: 300, crop: :fill %>')"
->
-          <h5 class="card-title text-center"><%= link_to list[:name], list_path(list[:id]) %></h5>
+        <div class="card-category" style="background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url('<%= cl_image_path(list.photo.key, height: 300, crop: :fill) %>')">
+          <h5 class="card-title text-center"><%= link_to list.name, list_path(list.id) %></h5>
         </div>
       <% end %>
     </div>
   </div>
 </div>
-<!-- Main container End -->
