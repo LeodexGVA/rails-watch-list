@@ -3,8 +3,8 @@
     <h3>Add a new list</h3>
     <%= simple_form_for @list do |f| %>
       <%= f.input :name, placeholder: "Enter a list name (ie: Drama)" %>
-      <%= f.button :submit, class: "btn btn-primary" %>
       <%= f.input :photo, as: :file %>
+      <%= f.button :submit, class: "btn btn-primary" %>
     <% end %>
     <p><%= link_to "Back to list", root_path %></p>
   <!-- Simple form End -->
