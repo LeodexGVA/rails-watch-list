@@ -19,7 +19,8 @@
   <div class="row justify-content-center align-items-center">
     <div class="col-md-4 d-flex">
       <% @lists.each do |list| %>
-        <div class="card bg-dark p-4 m-2" style="width: 400px; height: 100px;">
+        <div class="card m-2">
+          <%= cl_image_tag("xxbxqre2asdkzg15wpep", crop: :fill) %>
           <h5 class="card-title text-center"><%= link_to list[:name], list_path(list[:id]) %></h5>
         </div>
       <% end %>
